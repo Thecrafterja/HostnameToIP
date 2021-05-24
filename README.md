@@ -24,10 +24,14 @@ With '-f' you can insert a file with hostnames. Every new line is taken as a hos
 -f domains.txt
 ```
 
+<b>Disabled:</b>
 With -cout you can activate or deactivate the console output. Activated output is default.
 ```
 -cout false
 ```
+
+## Developer information
+-cout will be enabled when 'file-output' is available.
 
 ## Contribution, Issues...
 This is my first public Github repository with a real project. This project isn't big, but it's a beginning. I am happy about every contribution, every reported issue and every look at this repository. Thanks!
