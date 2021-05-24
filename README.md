@@ -5,6 +5,8 @@ Written in Java
 ## What does it do?
 This program converts a hostname like 'thecrafterja.github.io' into the correct ip address, like '136.153.12.12'(only example)
 
+For example, this can be used, if you know, that your raspberrypi has the hostname 'raspi', but you don't know, which ip it has.
+
 
 ## How to use
 Download the newest release. You will also need a jdk or jre. Minimum is jdk-16.<br>
