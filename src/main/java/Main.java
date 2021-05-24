@@ -48,9 +48,9 @@ public class Main {
                     hNToIP.addHostnameAsArrayList((ArrayList<String>) Files.readAllLines(filePath));
                     hasHostname = true;
                     break;
-                case "-cout":
+                /*case "-cout":
                     consoleOutput = Boolean.parseBoolean(argument.getData());
-                    break;
+                    break;*/
                 default:
                     if (argument.getType().equals("help") || argument.getType().equals("-help") || argument.getType().equals("h") || argument.getType().equals("-h")) {
                         System.err.println("Use '" + argument.getType() + "' only alone");
