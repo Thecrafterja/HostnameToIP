@@ -1,7 +1,11 @@
 package network;
 
+import java.io.IOException;
 import java.net.InetAddress;
 import java.net.UnknownHostException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 
 public class HostnameToIP {
@@ -24,25 +28,39 @@ public class HostnameToIP {
     }
 
     public void output(boolean consoleOutput) {
-        StringBuilder finalStringBuilder = new StringBuilder();
+        StringBuilder CMDStringBuilder = new StringBuilder();
+        StringBuilder FileStringBuilder = new StringBuilder();
         for (String hostname : hostNames) {
             try {
                 InetAddress[] inetAddresses = InetAddress.getAllByName(hostname);
-                finalStringBuilder.append("\n\nIP addresses for hostname '" + hostname + "'");
+                CMDStringBuilder.append("\n\nIP addresses for hostname '" + hostname + "'");
+                FileStringBuilder.append(hostname + "\n");
                 for (int i = 0; i < inetAddresses.length; i++) {
-                    finalStringBuilder.append("\n" + inetAddresses[i].getHostAddress());
+                    CMDStringBuilder.append("\n" + inetAddresses[i].getHostAddress());
+                    FileStringBuilder.append(inetAddresses[i].getHostAddress() + "\n");
                 }
+                FileStringBuilder.append("#\n");
             } catch (UnknownHostException e) {
                 System.err.println("Host '" + hostname + "' is unknown");
             }
         }
-        String finalResult = finalStringBuilder.toString();
+        String finalResult = CMDStringBuilder.toString();
 
         if (consoleOutput) {
             System.out.println(finalResult);
         }
 
-        //TODO add file output
+        if (filePaths.size() != 0) {
+            for (String filePathString : filePaths) {
+                try {
+                    Path filePath = Paths.get(filePathString);
+                    Files.write(filePath, FileStringBuilder.toString().getBytes());
+                    System.out.println("\n\nWrote result to '" + filePathString + "'");
+                } catch (IOException e) {
+                    System.err.println("File '" + filePathString + "' not found");
+                }
+            }
+        }
     }
 
 }
