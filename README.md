@@ -12,7 +12,7 @@ For example, this can be used, if you know, that your raspberrypi has the hostna
 Download the newest release. You will also need a jdk or jre. Minimum is jdk-16.<br>
 Then you have to run:
 ```
-java -jar hostnametoip-1.0.jar <arguments>
+java -jar HostnameToIP-1.0.1.jar <arguments>
 ```
 
 ## Arguments
