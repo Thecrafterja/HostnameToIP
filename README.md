@@ -1,4 +1,4 @@
-# HostnameByIP
+# HostnameToIP
 <h2>Made by Thecrafterja</h2>
 Written in Java
 
