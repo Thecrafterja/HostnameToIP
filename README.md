@@ -31,7 +31,7 @@ With -cout you can activate or deactivate the console output. Activated output i
 -cout false
 ```
 
-With -outf you can set a file for the result.
+With -outf you can set a file for the results.
 ```
 -outf result.txt
 ```
